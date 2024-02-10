@@ -34,7 +34,8 @@ function App() {
     }
   };
   return (
-    <> 
+    <>
+    <BrowserRouter>
       <Navbar
         title="TextUtils"
         aboutText="About TextUtils"
@@ -43,7 +44,7 @@ function App() {
       />
       <Alert alert={alert} />
       <div className="container">
-      <BrowserRouter>
+      
       <Routes>
         <Route path="/about" element={<About/>} />
         <Route path="/" element={<Textform
@@ -52,8 +53,9 @@ function App() {
           showAlert={showAlert}
         />} />
       </Routes>
-    </BrowserRouter>
+    
       </div>
+      </BrowserRouter>
     </>
   );
 }
