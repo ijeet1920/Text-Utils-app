@@ -16,9 +16,7 @@ export default function Textform(props) {
     props.showAlert("Textform Cleared Successfully!","success")
   };
   const handlecopy =()=>{
-    let text=document.getElementById("myBox")
-    text.select();
-    navigator.clipboard.writeText(text.value);
+    navigator.clipboard.writeText(text);
     props.showAlert("Copied to Clipboard!","success")
   }
   const remspace =()=>{
@@ -59,7 +57,7 @@ export default function Textform(props) {
 
       <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
         <h3>Text Summary</h3>
-        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Words,{text.length} Characters</p>
+        <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Words,{text.length} Characters</p>
         <p><b>{0.008*(text.split(" ").filter((element)=>{return element.length!==0}).length)}</b> Minutes to Read</p>
         <h3>Preview</h3>
         <p>{text.length>0?text:"Nothing to Preview"}</p>
