@@ -25,12 +25,12 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#013f4d";
       showAlert("DarkMode has been succesfully applied!", "success");
-      document.title="TextUtils - DarkMode"
+      // document.title="TextUtils - DarkMode"
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("LightMode has been succesfully applied!", "success");
-      document.title="TextUtils - Home"
+      // document.title="TextUtils - Home"
     }
   };
   return (
@@ -38,7 +38,7 @@ function App() {
     <BrowserRouter>
       <Navbar
         title="TextUtils"
-        aboutText="About TextUtils"
+        aboutText="About"
         mode={mode}
         togglemode={togglemode}
       />
@@ -46,9 +46,9 @@ function App() {
       <div className="container">
       
       <Routes>
-        <Route path="/about" element={<About/>} />
+        <Route path="/about" element={<About mode={mode}/>} />
         <Route path="/" element={<Textform
-          heading="Enter the Text to Analyse Below"
+          heading="Try TextUtils - Word Counter, Character Counter,   Remove Extra Spaces"
           mode={mode}
           showAlert={showAlert}
         />} />
